@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: #ddd;
+   perspective: 1000px;
+}
+
+.book{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cover {
+    font-size: 35px;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-shadow: 2px -2px red;
+}
+
+.cover, .back-cover {
+    height: 300px;
+    width: 260px;
+    background: black;
+    border-radius: 2px 20px 20px 2px;
+    position: absolute;
+    box-shadow: 1px 1px 10px #808080;
+    transform: rotateX(10deg);
+    transform-origin: center left;
+}
+
+.book:hover .cover{
+    transform: rotateX(10deg) rotateY(-180deg);
+}
+
+.book:hover .page {
+    transform: rotateY(10deg) rotateY(-180deg);
+    z-index: 2;
+}
+
+.cover{
+    z-index: 1;
+    transition: all 3s;
+}
+
+.back-cover {
+    z-index: -2;
+}
+
+.page, .last-page {
+    height: 280px;
+    width: 250px;
+    background: white;
+    color: black;
+    position: absolute;
+    border-radius: 2px 10px 10px 2px;
+    transform: rotateX(10deg);
+    transform-origin: center left;
+    z-index: -1;
+}
+
+.page:nth-child(2) {
+    transition-duration: 3s;
+}
+page:nth-child(3) {
+    transition-duration: 2.6s;
+}
+page:nth-child(4) {
+    transition-duration: 2.2s;
+}
+page:nth-child(5) {
+    transition-duration: 1.8s;
+}
+page:nth-child(6) {
+    transition-duration: 1.4s;
+}
+
+.book:hover .page:nth-child(2){
+    transition-duration: 6s;
+}
+book:hover .page:nth-child(2){
+    transition-duration: 5.6s;
+}
+book:hover .page:nth-child(2){
+    transition-duration: 5.2s;
+}
+book:hover .page:nth-child(2){
+    transition-duration: 4.8s;
+}
+book:hover .page:nth-child(2){
+    transition-duration: 4.2s;
+}
+
+.last-page img{
+    width: 150px;
+    height: 150;
+    display: block;
+    border-radius: 50%;
+    margin: 20px auto;
+    position: relative;
+    border: 2px solid red;
+}
+
+.last-page h2 {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 50px;
+}
